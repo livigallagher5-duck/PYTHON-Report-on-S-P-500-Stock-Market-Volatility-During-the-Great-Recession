@@ -1,0 +1,88 @@
+
+\begin{figure}[H]
+\caption{\textbf{Boruta Algorithm (Z-scores)}}
+\vspace{0.8em}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.9\textwidth,
+    height=8cm,
+    ymode=log,
+    ymin=0.2, ymax=4.5,
+    xmin=0.4, xmax=5.6,
+    ymajorgrids=true,
+    grid style={gray!30},
+    ylabel={Z-Score},
+    xlabel={Variables},
+    log ticks with fixed point,
+    ytick={0.2,0.5,1,2,4},
+    xtick={1,2,3,4,5},
+    xticklabels={CCI, CPI, Fed. IR Change, GDP Growth, Un. Rate Change},
+    xticklabel style={rotate=90, anchor=east, font=\footnotesize},
+    boxplot/draw direction=y,
+    boxplot/box extend=0.8,
+]
+
+% CCI
+\addplot+[
+    boxplot prepared={
+        draw position=1,
+        lower whisker=2.77, lower quartile=2.93, median=2.99,
+        upper quartile=3.08, upper whisker=3.28
+    },
+    fill=cyan!40!white, draw=black, mark=o, mark options={fill=white}
+] table[row sep=\\, y index=0] {
+    3.35 \\
+};
+
+% CPI
+\addplot+[
+    boxplot prepared={
+        draw position=2,
+        lower whisker=2.23, lower quartile=2.34, median=2.40,
+        upper quartile=2.47, upper whisker=2.64
+    },
+    fill=cyan!40!white, draw=black, mark=o, mark options={fill=white}
+] table[row sep=\\, y index=0] {
+    2.68 \\ 2.70 \\
+};
+
+% Fed. Funds Rate Change
+\addplot+[
+    boxplot prepared={
+        draw position=3,
+        lower whisker=1.17, lower quartile=1.36, median=1.43,
+        upper quartile=1.51, upper whisker=1.68
+    },
+    fill=cyan!40!white, draw=black, mark=o, mark options={fill=white}
+] table[row sep=\\, y index=0] {
+    1.04 \\ 1.77 \\ 1.80 \\
+};
+
+% GDP Growth (no outliers)
+\addplot+[
+    boxplot prepared={
+        draw position=4,
+        lower whisker=0.84, lower quartile=1.09, median=1.20,
+        upper quartile=1.32, upper whisker=1.53
+    },
+    fill=cyan!40!white, draw=black
+] table[row sep=\\, y index=0] {
+    \\
+};
+
+% Unemployment Rate Change (no outliers)
+\addplot+[
+    boxplot prepared={
+        draw position=5,
+        lower whisker=0.26, lower quartile=0.30, median=0.32,
+        upper quartile=0.35, upper whisker=0.37
+    },
+    fill=blue!60!black, draw=black
+] table[row sep=\\, y index=0] {
+    \\
+};
+
+\end{axis}
+\end{tikzpicture}
+\end{figure}

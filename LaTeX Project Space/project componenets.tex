@@ -1,0 +1,78 @@
+
+\subsection{Project Components}
+\begingroup
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\subsubsection{Economic Theory and Hypothesis}
+\begin{enumerate}
+    \item State a clear economic research question that your analysis will address.
+    \item Provide 2--3 paragraphs reviewing relevant economic theory and citing at least 2 academic sources.
+    \item Formulate a specific, testable economic hypothesis about the relationship between your key variables.
+    \item Discuss the expected signs and magnitudes of coefficients based on economic theory.
+\end{enumerate}
+
+\subsubsection{Data Description and Exploratory Analysis}
+\begin{enumerate}
+    \item Provide detailed description of your dataset: source, time period, sample selection, variable definitions.
+    \item Create comprehensive descriptive statistics table (mean, median, standard deviation, min, max, skewness, kurtosis).
+    \item Generate appropriate visualizations: histograms, box plots, correlation matrix heatmap, scatter plots of key relationships.
+    \item Assess normality using Q-Q plots and density plots for continuous variables.
+    \item Identify and discuss potential non-linearities. What transformations might be needed?
+    \item Comment on outliers using appropriate detection methods (IQR, standardized residuals).
+    \item Handle missing values: document patterns, justify imputation method, sensitivity analysis.
+    \item Discuss findings from Pandas Profiling analysis.
+\end{enumerate}
+
+\subsubsection{Variable Selection and Model Development}
+\begin{enumerate}
+    \item Apply Boruta Algorithm to identify important predictors (document parameters used).
+    \item Apply Mallows $C_p$ criterion for variable selection.
+    \item Check for multicollinearity using Variance Inflation Factors.
+    \item Based on economic theory and statistical evidence, develop and justify three competing models:
+    \begin{itemize}
+        \item \textbf{Model 1:} Simple regression with your theoretically most important predictor.
+        \item \textbf{Model 2:} Multiple regression with 2--3 key predictors.
+        \item \textbf{Model 3:} Multiple regression including all statistically significant predictors.
+    \end{itemize}
+    \item Compare models using AIC, BIC, adjusted $R^2$, and cross-validation performance.
+    \item Select final model and provide detailed economic and statistical justification.
+\end{enumerate}
+
+\subsubsection{Final Model Diagnostics and Robustness}
+Required diagnostic tests and visualizations:
+\begin{itemize}
+    \item \textbf{Linearity:} Residuals vs.\ fitted values plots, RESET test for specification.
+    \item \textbf{Homoskedasticity:} Breusch--Pagan test, White test, scale-location plots.
+    \item \textbf{Normality of residuals:} Q-Q plots, Jarque--Bera test, histograms of residuals.
+    \item \textbf{Outliers and influence:} Cook's distance plot, leverage vs.\ residuals, DFBETAS.
+    \item \textbf{Robustness analysis:} Bootstrap coefficient estimates (1000 replications), compare with OLS estimates.
+    \item \textbf{Model validation:} 5-fold or 10-fold cross-validation, out-of-sample prediction accuracy.
+\end{itemize}
+Document any violations of OLS assumptions and discuss implications for your results.
+
+\subsubsection{Results and Economic Interpretation}
+\begin{enumerate}
+    \item Present final model results in professional regression table.
+    \item Interpret ALL coefficients in economic terms (magnitude, direction, units).
+    \item Distinguish between statistical significance and economic significance.
+    \item Calculate and interpret confidence intervals for key parameters.
+    \item Discuss $R^2$ and model fit in economic context.
+\end{enumerate}
+
+\subsubsection{Limitations, Policy Implications, and Extensions}
+\begin{enumerate}
+    \item Discuss key limitations of your analysis (data, methodology, scope).
+    \item Identify potential sources of bias and how they might affect conclusions.
+    \item Describe policy implications of your findings (if applicable).
+    \item Suggest concrete extensions for future research.
+    \item Comment on external validity: to what populations/contexts do results generalize?
+\end{enumerate}
+
+\subsubsection{Code Quality and Reproducibility}
+\begin{itemize}
+    \item Well-commented Python code with clear section headers.
+    \item Reproducible analysis (set random seeds where applicable).
+    \item Efficient, readable code following best practices.
+    \item All figures and tables generated programmatically.
+\end{itemize}
+
+\endgroup
